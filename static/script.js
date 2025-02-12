@@ -24,4 +24,4 @@ navItem.forEach((item) => {
             menuMobile.classList.replace('bi-x', 'bi-list');
         }
     });
-}
+});
