@@ -235,3 +235,25 @@ i.menu-mobile {
     background: #fff;
     border-radius: 50%;
 }
+
+.carousel-control-prev {
+    margin-left: -70px;
+}
+
+.carousel-control-next {
+    margin-right: -70px;
+}
+
+.carousel-indicators {
+    margin-bottom: -35px;
+}
+
+@media (max-width: 1860px){
+    .carousel-control-prev {
+        margin-left: 0;
+    }
+    
+    .carousel-control-next {
+        margin-right: 0;
+    }
+}
