@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=F:\Users\Notebook\ssd_marley\curso_programaçao\projeto_video\.venv
+set VIRTUAL_ENV=c:\Users\Marley\Desktop\projetos\portfolio_marley_paranhos\.venv
 
 if not defined PROMPT set PROMPT=$P$G
 

@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="F:\Users\Notebook\ssd_marley\curso_programaçao\projeto_video\.venv"
+VIRTUAL_ENV="c:\Users\Marley\Desktop\projetos\portfolio_marley_paranhos\.venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
