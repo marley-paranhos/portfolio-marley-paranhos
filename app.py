@@ -9,7 +9,7 @@ from config import email, senha
 load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = 'marley'
+app.secret_key = "marley"
 
 # Configurações de e-mail
 EMAIL_HOST = "smtp.gmail.com"
@@ -17,17 +17,20 @@ EMAIL_PORT = 587
 EMAIL_USER = email
 EMAIL_PASSWORD = senha  # Senha de aplicativo (não use a senha da conta!)
 
+
 class Contato:
     def __init__(self, nome, email, mensagem):
         self.nome = nome
         self.email = email
         self.mensagem = mensagem
 
-@app.route('/')
-def index():
-    return render_template('index.html')
 
-@app.route('/send', methods=['GET', 'POST'])
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+
+@app.route("/send", methods=["GET", "POST"])
 def send():
     if request.method == "POST":
         nome = request.form.get("nome")
@@ -57,8 +60,9 @@ def send():
         except Exception as e:
             print(f"Erro ao enviar o e-mail: {e}")
             flash("Erro ao enviar a mensagem. Tente novamente mais tarde.", "danger")
-    
-    return redirect('/')
 
-if __name__ == '__main__':
+    return redirect("/")
+
+
+if __name__ == "__main__":
     app.run(debug=True)
