@@ -187,7 +187,8 @@ i.menu-mobile {
 }
 
 .section-bg{
-  background-color: #eff5ff;
+  /* background-color: #eff5ff; */
+  background-color: hwb(216 92% 0%);
 }
 
 .cv .cv-title{
