@@ -3,13 +3,24 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from flask import Flask, render_template, redirect, request, flash, url_for
 from dotenv import load_dotenv
-import os
 from config import email, senha
+from datetime import datetime
 
 load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = "marley"
+
+data_nascimento_str = "13/03/1976"
+data_nascimento = datetime.strptime(data_nascimento_str, "%d/%m/%Y")
+data_atual = datetime.now()
+
+idade = data_atual.year - data_nascimento.year
+
+# Ajusta a idade se o aniversário ainda não tiver ocorrido no ano atual
+if (data_atual.month < data_nascimento.month) or \
+   (data_atual.month == data_nascimento.month and data_atual.day < data_nascimento.day):
+    idade -= 1
 
 # Configurações de e-mail
 EMAIL_HOST = "smtp.gmail.com"
@@ -27,7 +38,7 @@ class Contato:
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", idade=idade)
 
 
 @app.route("/send", methods=["GET", "POST"])
