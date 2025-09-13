@@ -109,7 +109,7 @@ section#inicio {
 }
 
 /* cria o fade na parte de baixo */
-section#inicio::after {
+/* section#inicio::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -118,7 +118,7 @@ section#inicio::after {
   height: 100px; /* altura do fade */
   background: linear-gradient(to bottom, rgba(2, 17, 36, 0) 0%, #f8faff 100%);
   pointer-events: none; /* não atrapalha cliques */
-}
+} */
 
 section#inicio h2 {
   font-size: 6rem;
